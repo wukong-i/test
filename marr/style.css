@@ -1,0 +1,131 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+  font-family: monospace, sans-serif;
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* Safari support */
+  -webkit-touch-callout: none; /* Disable callouts */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  overflow-y: auto; /* Enable scrolling */
+}
+
+/* Background for index page */
+.background {
+  background-image: url('background.jpg'); /* Use the local background image */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Background for other pages */
+.other-background {
+  background-image: url('background.jpg');
+  background-attachment: fixed;
+  background-color: black; /* Black background for other pages */
+  min-height: 100%; /* Ensures full height for scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-y: auto; /* Enable scrolling for overflow */
+}
+
+/* Button Styles */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between buttons */
+  padding: 20px;
+  overflow-y: auto; /* Enable scrolling if buttons overflow */
+}
+
+.button {
+  border: 2px solid white;
+  color: white;
+  padding: 15px 20px; /* Increased padding for better spacing */
+  font-size: 1.2em;
+  text-align: left; /* Align text to the left */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block; /* Let the button grow with its content */
+   /* Prevent text wrapping */
+  overflow: hidden; /* Hide any overflow text */
+   /* Add '...' if text overflows */
+  max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  box-sizing: border-box; /* Include padding and border in the size calculation */
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure that buttons don't exceed the screen width */
+@media (max-width: 600px) {
+  .button {
+    font-size: 1em;
+    padding: 12px 15px;
+    max-width: 100%; /* Ensure it stays responsive on mobile */
+  }
+}
+
+/* Floating Back Button */
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:hover {
+  background-color: #555;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .button {
+    font-size: 1em;
+    padding: 12px;
+    width: 90vw; /* Make sure the button takes up most of the viewport width on mobile */
+    max-width: 90vw; /* Ensure buttons are not too wide on mobile */
+  }
+
+  .button-container {
+    gap: 5px; /* Reduce the gap between buttons on mobile */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .back-button {
+    font-size: 1.2em; /* Adjust the size of the back button for mobile */
+    padding: 10px;
+  }
+}
